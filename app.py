@@ -177,7 +177,7 @@ body {
 
         <!-- TOOL 2 -->
         <a href="https://free-fire-glory-bot-ckr-and-bbc-web.vercel.app/" target="_blank"
-           class="tool-card rounded-2xl p-4 tool" data-category="freefire premium" data-name="buy glory bot paid">
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire premium" data-name="glory bot">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-purple-soft">
@@ -185,7 +185,7 @@ body {
                     </div>
                     <span class="text-[9px] font-black text-emerald-400">● ONLINE</span>
                 </div>
-                <h3 class="mt-4 text-sm font-black uppercase">BUY GLORY BOT PAID</h3>
+                <h3 class="mt-4 text-sm font-black uppercase">GLORY BOT</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
             <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
@@ -215,7 +215,7 @@ body {
 
         <!-- TOOL 4 -->
         <a href="https://ckrpro-bio-changer-with-access-toke.vercel.app/" target="_blank"
-           class="tool-card rounded-2xl p-4 tool" data-category="freefire token" data-name="long bio changer">
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire token" data-name="long bio">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-orange-soft">
@@ -223,7 +223,7 @@ body {
                     </div>
                     <span class="text-[9px] font-black text-emerald-400">● ONLINE</span>
                 </div>
-                <h3 class="mt-4 text-sm font-black uppercase">LONG BIO CHANGER</h3>
+                <h3 class="mt-4 text-sm font-black uppercase">LONG BIO</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
             <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
@@ -272,7 +272,7 @@ body {
 
         <!-- TOOL 7 -->
         <a href="https://ckrprolike.up.railway.app/#auto-likes" target="_blank"
-           class="tool-card rounded-2xl p-4 tool" data-category="freefire premium" data-name="ckrpro paid like">
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire premium" data-name="like bot">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-red-soft">
@@ -280,7 +280,7 @@ body {
                     </div>
                     <span class="text-[9px] font-black text-emerald-400">● ONLINE</span>
                 </div>
-                <h3 class="mt-4 text-sm font-black uppercase">CKRPRO PAID LIKE</h3>
+                <h3 class="mt-4 text-sm font-black uppercase">LIKE BOT</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
             <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
