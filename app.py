@@ -58,6 +58,11 @@ body {
 .tool-card {
     background: #10131a;
     transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
 }
 
 .tool-card:active {
@@ -148,11 +153,12 @@ body {
     </div>
 
 
-    <!-- TOOL GRID (SAME OLD STRUCTURE) -->
+    <!-- TOOL GRID -->
     <div id="toolGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pb-12">
 
         <!-- TOOL 1 -->
-        <div class="tool-card rounded-2xl p-4 tool flex flex-col justify-between" data-category="token freefire" data-name="eat to access token">
+        <a href="https://eat-to-access-token-by-ckrpro-web-g.vercel.app/" target="_blank"
+           class="tool-card rounded-2xl p-4 tool" data-category="token freefire" data-name="eat to access token">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-blue-soft">
@@ -163,14 +169,15 @@ body {
                 <h3 class="mt-4 text-sm font-black uppercase">EAT TO ACCESS TOKEN</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
-            <a href="https://eat-to-access-token-by-ckrpro-web-g.vercel.app/" target="_blank"
-               class="mt-5 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-black text-[10px] font-black">
-                OPEN TOOL <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-        </div>
+            <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
+                <span>TAP TO OPEN</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
         <!-- TOOL 2 -->
-        <div class="tool-card rounded-2xl p-4 tool flex flex-col justify-between" data-category="freefire premium" data-name="buy glory bot paid">
+        <a href="https://free-fire-glory-bot-ckr-and-bbc-web.vercel.app/" target="_blank"
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire premium" data-name="buy glory bot paid">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-purple-soft">
@@ -181,14 +188,15 @@ body {
                 <h3 class="mt-4 text-sm font-black uppercase">BUY GLORY BOT PAID</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
-            <a href="https://free-fire-glory-bot-ckr-and-bbc-web.vercel.app/" target="_blank"
-               class="mt-5 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-black text-[10px] font-black">
-                BUY / OPEN <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-        </div>
+            <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
+                <span>TAP TO OPEN</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
         <!-- TOOL 3 -->
-        <div class="tool-card rounded-2xl p-4 tool flex flex-col justify-between" data-category="freefire" data-name="request spam profile visit">
+        <a href="https://ff-ckrpro-request-spam-and-profile.vercel.app/" target="_blank"
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire" data-name="request spam profile visit">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-green-soft">
@@ -199,14 +207,15 @@ body {
                 <h3 class="mt-4 text-sm font-black uppercase">REQUEST SPAM & VISIT</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
-            <a href="https://ff-ckrpro-request-spam-and-profile.vercel.app/" target="_blank"
-               class="mt-5 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-black text-[10px] font-black">
-                OPEN TOOL <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-        </div>
+            <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
+                <span>TAP TO OPEN</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
         <!-- TOOL 4 -->
-        <div class="tool-card rounded-2xl p-4 tool flex flex-col justify-between" data-category="freefire token" data-name="long bio changer">
+        <a href="https://ckrpro-bio-changer-with-access-toke.vercel.app/" target="_blank"
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire token" data-name="long bio changer">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-orange-soft">
@@ -217,14 +226,15 @@ body {
                 <h3 class="mt-4 text-sm font-black uppercase">LONG BIO CHANGER</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
-            <a href="https://ckrpro-bio-changer-with-access-toke.vercel.app/" target="_blank"
-               class="mt-5 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-black text-[10px] font-black">
-                OPEN TOOL <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-        </div>
+            <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
+                <span>TAP TO OPEN</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
         <!-- TOOL 5 -->
-        <div class="tool-card rounded-2xl p-4 tool flex flex-col justify-between" data-category="token freefire" data-name="get eat token">
+        <a href="https://ff-get-eat-token-webtool.vercel.app/" target="_blank"
+           class="tool-card rounded-2xl p-4 tool" data-category="token freefire" data-name="get eat token">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-blue-soft">
@@ -235,14 +245,15 @@ body {
                 <h3 class="mt-4 text-sm font-black uppercase">GET EAT TOKEN</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
-            <a href="https://ff-get-eat-token-webtool.vercel.app/" target="_blank"
-               class="mt-5 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-black text-[10px] font-black">
-                GET TOKEN <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-        </div>
+            <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
+                <span>TAP TO OPEN</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
         <!-- TOOL 6 -->
-        <div class="tool-card rounded-2xl p-4 tool flex flex-col justify-between" data-category="freefire" data-name="guild manager">
+        <a href="https://guild-join-and-leave-webtool-ckr.vercel.app/" target="_blank"
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire" data-name="guild manager">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-green-soft">
@@ -253,14 +264,15 @@ body {
                 <h3 class="mt-4 text-sm font-black uppercase">GUILD MANAGER</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
-            <a href="https://guild-join-and-leave-webtool-ckr.vercel.app/" target="_blank"
-               class="mt-5 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-black text-[10px] font-black">
-                OPEN TOOL <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-        </div>
+            <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
+                <span>TAP TO OPEN</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
         <!-- TOOL 7 -->
-        <div class="tool-card rounded-2xl p-4 tool flex flex-col justify-between" data-category="freefire premium" data-name="ckrpro paid like">
+        <a href="https://ckrprolike.up.railway.app/#auto-likes" target="_blank"
+           class="tool-card rounded-2xl p-4 tool" data-category="freefire premium" data-name="ckrpro paid like">
             <div>
                 <div class="flex items-start justify-between">
                     <div class="icon-box bg-red-soft">
@@ -271,11 +283,11 @@ body {
                 <h3 class="mt-4 text-sm font-black uppercase">CKRPRO PAID LIKE</h3>
                 <p class="text-[11px] text-gray-500 mt-1.5 leading-5"> </p>
             </div>
-            <a href="https://ckrprolike.up.railway.app/#auto-likes" target="_blank"
-               class="mt-5 flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-white text-black text-[10px] font-black">
-                OPEN TOOL <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </a>
-        </div>
+            <div class="mt-5 flex items-center justify-between text-[10px] font-bold text-gray-500">
+                <span>TAP TO OPEN</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+            </div>
+        </a>
 
     </div>
 </section>
