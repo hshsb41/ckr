@@ -9,7 +9,7 @@ HTML = r"""
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-<title>MY STORE</title>
+<title></title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://unpkg.com/lucide@latest"></script>
@@ -42,14 +42,13 @@ body {
 }
 
 .clean-logo {
-    width: 65px;
-    height: 65px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     cursor: pointer;
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    border: 2px solid rgba(255, 255, 255, 0.08);
 }
 
 .clean-logo:hover {
@@ -60,249 +59,539 @@ body {
     transform: scale(0.92);
 }
 
-/* COMPACT TOOL CARDS */
+/* TOOL CARDS */
 .tool-card {
     background: #0e1117;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition:
+        transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+        background-color 0.2s ease;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     text-decoration: none;
     color: inherit;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    aspect-ratio: 1 / 0.85;
+    border: none;
+
+    aspect-ratio: 1 / 0.95;
 }
 
 .tool-card:hover {
     background: #131720;
     transform: translateY(-2px);
-    border-color: rgba(255, 255, 255, 0.12);
 }
 
 .tool-card:active {
     transform: scale(0.96);
 }
 
-/* Icon Boxes */
+/* Soft Icon Boxes */
 .icon-box {
-    width: 34px;
-    height: 34px;
-    border-radius: 10px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-/* Soft Colors */
-.bg-blue-soft { background: rgba(59, 130, 246, 0.1); color: #3b82f6; }
-.bg-green-soft { background: rgba(34, 197, 94, 0.1); color: #22c55e; }
-.bg-purple-soft { background: rgba(168, 85, 247, 0.1); color: #a855f7; }
-.bg-orange-soft { background: rgba(249, 115, 22, 0.1); color: #f97316; }
-.bg-red-soft { background: rgba(239, 68, 68, 0.1); color: #ef4444; }
-.bg-yellow-soft { background: rgba(234, 179, 8, 0.1); color: #eab308; }
-.bg-pink-soft { background: rgba(236, 72, 153, 0.1); color: #ec4899; }
+/* Premium Soft Colors */
+.bg-blue-soft {
+    background: rgba(59, 130, 246, 0.08);
+    color: #3b82f6;
+}
+
+.bg-green-soft {
+    background: rgba(34, 197, 94, 0.08);
+    color: #22c55e;
+}
+
+.bg-purple-soft {
+    background: rgba(168, 85, 247, 0.08);
+    color: #a855f7;
+}
+
+.bg-orange-soft {
+    background: rgba(249, 115, 22, 0.08);
+    color: #f97316;
+}
+
+.bg-red-soft {
+    background: rgba(239, 68, 68, 0.08);
+    color: #ef4444;
+}
+
+.bg-yellow-soft {
+    background: rgba(234, 179, 8, 0.08);
+    color: #eab308;
+}
+
+.search-box {
+    background: #0e1117;
+    transition: background 0.2s ease;
+}
+
+.search-box:focus-within {
+    background: #131720;
+}
 
 .wa-btn {
     background: #10b981;
-    transition: transform 0.25s ease;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .wa-btn:active {
     transform: scale(0.9);
 }
 
-::-webkit-scrollbar { width: 0; }
+::-webkit-scrollbar {
+    width: 0;
+}
 </style>
 </head>
 
 <body>
 
-<!-- AUDIO PLAYER WITH DIRECT RELILABLE LINK -->
-<audio id="bg-music" preload="auto" loop>
-    <source src="https://www.bensound.com/bensound-music/bensound-dubstep.mp3" type="audio/mpeg">
+<!-- AUDIO PLAYER -->
+<audio
+    id="bg-music"
+    preload="auto"
+    loop
+    src="{{ url_for('static', filename='music.mp3') }}">
 </audio>
+
 
 <!-- INTRO SPLASH SCREEN -->
 <div id="intro-overlay">
-    <img src="https://i.ibb.co/Y4KjTgvP/Picsart-26-02-07-02-21-57-621.jpg" alt="Logo" id="logo-btn" class="clean-logo mb-2">
-    <span class="text-[9px] text-gray-500 font-bold tracking-widest uppercase animate-pulse">Tap to Enter</span>
+
+    <img
+        src="https://i.ibb.co/Y4KjTgvP/Picsart-26-02-07-02-21-57-621.jpg"
+        alt="Logo"
+        id="logo-btn"
+        class="clean-logo mb-3">
+
+    <span class="text-[10px] text-gray-500 font-semibold tracking-widest uppercase animate-pulse"></span>
+
 </div>
 
-<!-- DASHBOARD CONTENT -->
-<section class="max-w-4xl mx-auto px-3 pt-6 pb-14">
 
-    <div class="mb-5 text-center">
-        <h1 class="text-xl font-black tracking-tight text-white">MY STORE</h1>
+<!-- DASHBOARD CONTENT -->
+<section id="tools" class="max-w-5xl mx-auto px-4 pt-8">
+
+    <div class="flex items-center justify-between mb-4">
+
+        <div>
+
+            <h1 class="font-extrabold text-xl tracking-tight text-white"></h1>
+
+            <p class="text-[11px] text-gray-400 mt-0.5 font-medium"></p>
+
+        </div>
+
+        <span
+            id="count"
+            class="text-[10px] font-bold text-gray-400 bg-[#0e1117] px-2.5 py-1.5 rounded-xl border border-white/5">
+        </span>
+
     </div>
 
-    <!-- ALBUM GRID -->
-    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2.5">
 
-        <!-- MY STORE LINK -->
-        <a href="https://ckrstore.up.railway.app" target="_blank"
-           class="tool-card rounded-xl p-3">
-            <div>
-                <div class="icon-box bg-pink-soft">
-                    <i data-lucide="store" class="w-4 h-4"></i>
-                </div>
-            </div>
-            <div class="flex items-center justify-between text-[10px] font-bold text-gray-300 mt-2">
-                <span>MY STORE</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-400"></i>
-            </div>
-        </a>
+    <!-- SEARCH BOX -->
+    <div
+        class="search-box rounded-xl px-3.5 py-2.5 flex items-center gap-3 mb-6 border border-white/5">
+
+        <i data-lucide="search" class="w-4 h-4 text-gray-500"></i>
+
+        <input
+            id="search"
+            type="text"
+            placeholder=""
+            class="w-full bg-transparent outline-none text-xs text-white placeholder:text-gray-500">
+
+    </div>
+
+
+    <!-- TOOL GRID -->
+    <div
+        id="toolGrid"
+        class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3.5 pb-16">
+
 
         <!-- TOOL 1 -->
-        <a href="https://eat-to-access-token-by-ckrpro-web-g.vercel.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://eat-to-access-token-by-ckrpro-web-g.vercel.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="eat to access token">
+
             <div>
+
                 <div class="icon-box bg-blue-soft">
-                    <i data-lucide="key-round" class="w-4 h-4"></i>
+
+                    <i data-lucide="key-round" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
                 <span>EAT TOKEN</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
+
 
         <!-- TOOL 2 -->
-        <a href="https://free-fire-glory-bot-ckr-and-bbc-web.vercel.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://free-fire-glory-bot-ckr-and-bbc-web.vercel.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="glory bot">
+
             <div>
+
                 <div class="icon-box bg-purple-soft">
-                    <i data-lucide="crown" class="w-4 h-4"></i>
+
+                    <i data-lucide="crown" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
                 <span>GLORY BOT</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
+
 
         <!-- TOOL 3 -->
-        <a href="https://ff-ckrpro-request-spam-and-profile.vercel.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://ff-ckrpro-request-spam-and-profile.vercel.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="request spam profile visit">
+
             <div>
+
                 <div class="icon-box bg-green-soft">
-                    <i data-lucide="send" class="w-4 h-4"></i>
+
+                    <i data-lucide="send" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
                 <span>SPAM & VISIT</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
+
 
         <!-- TOOL 4 -->
-        <a href="https://ckrpro-bio-changer-with-access-toke.vercel.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://ckrpro-bio-changer-with-access-toke.vercel.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="long bio">
+
             <div>
+
                 <div class="icon-box bg-orange-soft">
-                    <i data-lucide="file-pen-line" class="w-4 h-4"></i>
+
+                    <i data-lucide="file-pen-line" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
                 <span>LONG BIO</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
+
 
         <!-- TOOL 5 -->
-        <a href="https://ff-get-eat-token-webtool.vercel.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://ff-get-eat-token-webtool.vercel.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="get eat token">
+
             <div>
+
                 <div class="icon-box bg-blue-soft">
-                    <i data-lucide="ticket" class="w-4 h-4"></i>
+
+                    <i data-lucide="ticket" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
                 <span>GET TOKEN</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
+
 
         <!-- TOOL 6 -->
-        <a href="https://guild-join-and-leave-webtool-ckr.vercel.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://guild-join-and-leave-webtool-ckr.vercel.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="guild manager">
+
             <div>
+
                 <div class="icon-box bg-green-soft">
-                    <i data-lucide="users-round" class="w-4 h-4"></i>
+
+                    <i data-lucide="users-round" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
-                <span>GUILD MGR</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
+                <span>GUILD MANAGER</span>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
+
 
         <!-- TOOL 7 -->
-        <a href="https://ckrlike.up.railway.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://ckrlike.up.railway.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="like bot">
+
             <div>
+
                 <div class="icon-box bg-red-soft">
-                    <i data-lucide="heart" class="w-4 h-4"></i>
+
+                    <i data-lucide="heart" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
                 <span>LIKE BOT</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
 
+
         <!-- TOOL 8 -->
-        <a href="https://freefire-private-topup-ckrpro.vercel.app/" target="_blank"
-           class="tool-card rounded-xl p-3">
+        <a
+            href="https://freefire-private-topup-ckrpro.vercel.app/"
+            target="_blank"
+            class="tool-card rounded-2xl p-4 tool border border-white/5"
+            data-name="ff topup">
+
             <div>
+
                 <div class="icon-box bg-yellow-soft">
-                    <i data-lucide="zap" class="w-4 h-4"></i>
+
+                    <i data-lucide="zap" class="w-5 h-5"></i>
+
                 </div>
+
             </div>
-            <div class="flex items-center justify-between text-[10px] font-medium text-gray-400 mt-2">
+
+            <div
+                class="flex items-center justify-between text-[11px] font-medium text-gray-500 tracking-wide">
+
                 <span>FF TOPUP</span>
-                <i data-lucide="arrow-up-right" class="w-3 h-3 text-gray-500"></i>
+
+                <i
+                    data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 text-gray-600">
+                </i>
+
             </div>
+
         </a>
 
     </div>
+
 </section>
 
+
 <!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/9779840825493" target="_blank"
-   class="fixed right-4 bottom-4 z-50 w-10 h-10 rounded-full wa-btn flex items-center justify-center">
-    <i data-lucide="message-circle" class="w-5 h-5 text-black"></i>
+<a
+    href="https://wa.me/9779840825493"
+    target="_blank"
+    class="fixed right-5 bottom-5 z-50 w-12 h-12 rounded-full wa-btn flex items-center justify-center shadow-xl">
+
+    <i
+        data-lucide="message-circle"
+        class="w-5 h-5 text-black">
+    </i>
+
 </a>
 
+
 <script>
+
 lucide.createIcons();
 
+
+/* SEARCH */
+const search = document.getElementById("search");
+const cards = [...document.querySelectorAll(".tool")];
+const count = document.getElementById("count");
+
+
+/* INTRO + MUSIC */
 const logoBtn = document.getElementById("logo-btn");
 const introOverlay = document.getElementById("intro-overlay");
 const bgMusic = document.getElementById("bg-music");
 
-logoBtn.addEventListener("click", () => {
-    bgMusic.play().then(() => {
-        console.log("Audio playing successfully");
-    }).catch(e => {
-        console.log("Audio play blocked:", e);
-    });
-    
+bgMusic.volume = 0.5;
+
+
+/*
+    LOGO CLICK
+    -----------------------------
+    User click भएपछि तुरुन्त music play
+    हुन्छ।
+*/
+
+logoBtn.addEventListener("click", function () {
+
+    bgMusic.play()
+        .then(function () {
+
+            console.log("✅ MUSIC PLAYING");
+
+        })
+        .catch(function (error) {
+
+            console.error("❌ MUSIC ERROR:", error);
+
+        });
+
+
     introOverlay.style.opacity = "0";
-    setTimeout(() => {
+
+    setTimeout(function () {
+
         introOverlay.style.display = "none";
+
     }, 400);
+
 });
+
+
+/* SEARCH FUNCTION */
+function updateTools() {
+
+    const query = search.value.toLowerCase().trim();
+
+    let visible = 0;
+
+    cards.forEach(function (card) {
+
+        const name = card.dataset.name.toLowerCase();
+
+        if (name.includes(query)) {
+
+            card.style.display = "flex";
+            visible++;
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    count.textContent = visible + " TOOLS";
+}
+
+
+search.addEventListener("input", updateTools);
+
+updateTools();
+
 </script>
 
 </body>
 </html>
 """
 
+
 @app.route("/")
 def home():
     return render_template_string(HTML)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
 
+if __name__ == "__main__":
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )
